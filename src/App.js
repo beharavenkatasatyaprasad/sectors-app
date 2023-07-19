@@ -5,7 +5,7 @@ import FormDataTable from './components/FormDataTable';
 
 const Form = () => {
   const [name, setName] = useState('');
-  const [selectedObject, setselectedObject] = useState(null);
+  const [selectedObjectToUpdate, setselectedObject] = useState(null);
   const [selectedSectors, setSelectedSectors] = useState([]);
   const [sectors, setSectors] = useState([]);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
@@ -52,10 +52,10 @@ const Form = () => {
       name,
       selectedSectors,
       agreeToTerms,
-      _id: selectedObject,
+      _id: selectedObjectToUpdate,
     };
 
-    if (selectedObject) {
+    if (selectedObjectToUpdate) {
       await updateFormData(formData);
       alert('Response have been updated successfully');
       await fetchFormData();
@@ -75,9 +75,9 @@ const Form = () => {
   return (
     <div className='container mt-5'>
       <div className='card border-primary'>
-        <div className={'card-header text-white ' + (selectedObject ? 'bg-secondary' : 'bg-primary')}>
+        <div className={'card-header text-white ' + (selectedObjectToUpdate ? 'bg-secondary' : 'bg-primary')}>
           <h3 className='mb-4 text-center'>
-            {!selectedObject
+            {!selectedObjectToUpdate
               ? 'Please enter your name and pick the Sectors you are currently involved in.'
               : 'Update submitted response'}
           </h3>
