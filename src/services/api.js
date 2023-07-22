@@ -1,7 +1,7 @@
 // frontend/src/services/api.js
 import axios from 'axios';
 
-const API_BASE_URL = 'https://server-6cvf.onrender.com/api';
+const API_BASE_URL = 'https://sectors-server-pxnd.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
